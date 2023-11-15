@@ -1,10 +1,10 @@
 //SPDX-License-Identifier: Unlicensed
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract TokenSale is ERC20("BestToken", "BST"), Ownable {
+contract TokenSale is ERC20("BestToken", "BST"), Ownable(msg.sender) {
 
     mapping(address => uint[]) invested;
     address[] investors;
