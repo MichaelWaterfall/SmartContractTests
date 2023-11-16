@@ -31,7 +31,7 @@ describe('TokenSale Contract Test', function () {
     });
 
     it('Exploit', async function () {
-           
+      await tokenSale.connect(attacker).invest();
     }).timeout(100000000);
 
     after(async function () {
