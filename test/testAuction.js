@@ -27,12 +27,10 @@ describe('Test Auction', function () {
     });
 
     it('Exploit TestAuction', async function () {
-        await auction.connect(attacker).bid({value: ethers.utils.parseEther('9000')});
-        /*
-        for(let i = 0; i < 100; i++) {
-            //let amount = BigInt(i);
-            await auction.connect(attacker).bid({value: ethers.utils.parseEther('10')});
-        }*/
+        await auction.connect(attacker).bid({value: ethers.utils.parseEther('7')});
+        const attackAuctionFactory = await ethers.getContractFactory('AttackTestAuction', attacker);
+        await attackAuctionFactory.deploy(auction.address, {value: ethers.utils.parseEther('10')});
+        
     });
 
     after(async function () {
