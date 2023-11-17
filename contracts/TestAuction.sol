@@ -7,9 +7,9 @@ contract TestAuction {
     uint256 public highestBid;
 
     function bid() external payable {
-        require(msg.value > highestBid);
+        require(msg.value > highestBid, "msg.value must be higher than highestBid");
 
-        require(currentLeader.send(highestBid));
+        require(currentLeader.send(highestBid), "Send failed");
 
         currentLeader = payable(msg.sender);
         highestBid = msg.value;
