@@ -20,14 +20,16 @@ describe('Test Auction', function () {
         auction = await AuctionFactory.deploy();
 
         await auction.connect(user1).bid({value: USER1_FIRST_BID});
-        awaitauction.connect(user2).bid({value: USER2_FIRST_BID});
+        await auction.connect(user2).bid({value: USER2_FIRST_BID});
 
         expect(await auction.highestBid()).to.be.equal(USER2_FIRST_BID);
         expect(await auction.currentLeader()).to.be.equal(user2.address);
     });
 
     it('Exploit', async function () {
-             
+        for(let i = 0; i < 100; i++) {
+            
+        }
     });
 
     after(async function () {

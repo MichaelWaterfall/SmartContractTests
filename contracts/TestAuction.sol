@@ -1,4 +1,3 @@
-// SCH Course Copyright Policy (C): DO-NOT-SHARE-WITH-ANYONE
 //SPDX-License-Identifier: Unlicensed
 pragma solidity ^0.8.13;
 
