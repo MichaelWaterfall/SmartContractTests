@@ -26,11 +26,13 @@ describe('Test Auction', function () {
         expect(await auction.currentLeader()).to.be.equal(user2.address);
     });
 
-    it('Exploit', async function () {
+    it('Exploit TestAuction', async function () {
+        await auction.connect(attacker).bid({value: ethers.utils.parseEther('9000')});
+        /*
         for(let i = 0; i < 100; i++) {
-            let amount = BigInt(i);
-            await auction.connect(attacker).bid({value: amount});
-        }
+            //let amount = BigInt(i);
+            await auction.connect(attacker).bid({value: ethers.utils.parseEther('10')});
+        }*/
     });
 
     after(async function () {
