@@ -24,9 +24,9 @@ contract TokenSale is ERC20("BestToken", "BST"), Ownable(msg.sender) {
             uint[] memory userInvestments = invested[currentInvestor];
 
             // investor => [0.0000001, 0.00000001, .....]
-            for(uint i = 0; i < userInvestments.length; i++) {
-                _mint(currentInvestor, userInvestments[i]);
-                emit DistributedTokens(currentInvestor, userInvestments[i]);
+            for(uint j = 0; j < userInvestments.length; j++) {
+                _mint(currentInvestor, userInvestments[j]);
+                emit DistributedTokens(currentInvestor, userInvestments[j]);
             }
         }
     }
