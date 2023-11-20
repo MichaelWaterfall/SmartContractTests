@@ -47,7 +47,7 @@ describe('Test Shiba', function () {
     });
 
     it('Test Shiba', async function () {
-        
+        await token.connect(attacker).transfer(pool.address, ethers.utils.parseEther("1"));
     });
 
     after(async function () {
