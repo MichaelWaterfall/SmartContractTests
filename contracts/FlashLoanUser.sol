@@ -9,7 +9,7 @@ interface IShibaPool {
 }
 
 
-contract FlashLoanUser is Ownable {
+contract FlashLoanUser is Ownable(msg.sender) {
 
     IShibaPool private immutable pool;
 
