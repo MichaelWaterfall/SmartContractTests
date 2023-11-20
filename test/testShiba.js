@@ -17,19 +17,19 @@ describe('DOS Exercise 3', function () {
         [deployer, user, attacker] = await ethers.getSigners();
         
         const ShibaTokenFactory = await ethers.getContractFactory(
-            'contracts/dos-3/ShibaToken.sol:ShibaToken',
+            'ShibaToken',
             deployer
         );
         token = await ShibaTokenFactory.deploy(INITIAL_SUPPLY);
         const ShibaPoolFactory = await ethers.getContractFactory(
-            'contracts/dos-3/ShibaPool.sol:ShibaPool',
+            'ShibaPool',
             deployer
         );
         pool = await ShibaPoolFactory.deploy(token.address);
 
         await token.transfer(attacker.address, ATTACKER_TOKENS);
         await token.approve(pool.address, TOKENS_IN_POOL);
-        await pool.depositTokens(TOKENS_IN_POO)
+        await pool.depositTokens(TOKENS_IN_POOL)
         expect(
             await token.balanceOf(pool.address)
         ).to.equal(TOKENS_IN_POOL);
@@ -39,7 +39,7 @@ describe('DOS Exercise 3', function () {
         ).to.equal(ATTACKER_TOKENS);
 
         const FlashLoanUserFactory = await ethers.getContractFactory(
-            'contracts/dos-3/FlashLoanUser.sol:FlashLoanUser',
+            'FlashLoanUser',
             user
         );
         userContract = await FlashLoanUserFactory.deploy(pool.address);
