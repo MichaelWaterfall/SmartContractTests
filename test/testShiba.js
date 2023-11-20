@@ -1,7 +1,7 @@
 const { ethers } = require('hardhat');
 const { expect } = require('chai');
 
-describe('DOS Exercise 3', function () {
+describe('Test Shiba', function () {
 
     let token;
     let pool;
