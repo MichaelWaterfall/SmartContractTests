@@ -38,7 +38,7 @@ describe('Test Lendly Smart Contract', function () {
 
         // Load Tokens contract
         weth = await ethers.getContractAt(
-            "contracts/interfaces/IWETH9.sol:IWETH9",
+            "IWETH9",
             WETH_ADDRESS
         );
         dai = await ethers.getContractAt(
