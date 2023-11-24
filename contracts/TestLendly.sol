@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import {IUniswapV2Pair} from "../interfaces/IUniswapV2.sol";
-import {IWETH9} from "../interfaces/IWETH9.sol";
+import {IWETH9} from "./IWETH9.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
