@@ -4,7 +4,7 @@ const { expect } = require('chai');
 describe('Test Smart Contract', function () {
 
     let deployer, daoMember1, daoMember2, attacker, user;
-    let dao;
+    let dao, treasury;
 
     // Governance Tokens
     const DEPLOYER_TOKENS = ethers.utils.parseEther('1500'); // 10 million tokens
