@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./CompoundInterfaces.sol";
 
-contract CompoundUser is Ownable {
+contract CompoundUser is Ownable(msg.sender) {
 
     IComptroller private comptroller;
 
