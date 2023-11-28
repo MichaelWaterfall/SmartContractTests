@@ -41,7 +41,7 @@ describe('Test Smart Contract', function () {
             'TestChocolate',
             deployer
         );
-        chocolate = await this.ChocolateFactory.deploy(INITIAL_MINT);
+        chocolate = await ChocolateFactory.deploy(INITIAL_MINT);
 
         let pairAddress = await chocolate.uniswapV2Pair();
         pair = await ethers.getContractAt(
