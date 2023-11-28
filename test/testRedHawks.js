@@ -69,7 +69,6 @@ describe('Test Smart Contract', function () {
     });
 
     after(async function () {
-        // Attacker got all 178 VIP Membership Tickets
         expect(await redHawks.balanceOf(attacker.address)).to.be.equal(178);
     });
 });
